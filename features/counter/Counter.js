@@ -1,13 +1,13 @@
 import React , {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './counterSlice'
+import { decrement, increment ,incrementByAmount} from './counterSlice'
 import {Pressable, StatusBar, StyleSheet, Text, TextInput, View,Button,SafeAreaView} from "react-native";
 
 export default function Counter() {
     const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
-    const [number, onChangeNumber] = useState('');
-    
+
+    const [number, onChangeNumber] = useState();
     return (
 
 
@@ -36,7 +36,7 @@ color="#841584"
 />
 </SafeAreaView>
 <Button
-onPress={() => openModal(i) }
+onPress={() => dispatch(incrementByAmount(number || 0)) }
 
 title="add"
 color="#841584"

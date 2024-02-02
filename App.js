@@ -10,7 +10,7 @@ import  Counter from './features/counter/Counter'
 
 export default function App() {
  
-  const [number, onChangeNumber] = useState('');
+ 
 
   return (
     <Provider store={store}>
